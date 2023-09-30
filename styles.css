@@ -320,3 +320,38 @@ body {
         width: 100%;;
     }
 }
+
+/* login */
+.login {
+    background-color: #fff;
+    /* Choose an appropriate background color */
+    padding: 60px 0;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form .form-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form .btn {
+    padding: 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
