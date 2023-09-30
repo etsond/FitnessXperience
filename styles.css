@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -49,6 +49,22 @@ body {
     position: relative;
 }
 
+
+/* hamburger */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 3px auto;
+}
+/* hamburger */
+
 .landing {
     margin-top: 0;
     display: flex;
@@ -56,7 +72,7 @@ body {
     justify-content: space-between;
   
     height: 100vh;
-    background-image: url('./images/fitness.jpg');
+    background-image: url('./images/background.jpg');
 
     background-size: cover;
 
@@ -90,7 +106,7 @@ body {
 
 .partners {
     margin-top: 0px;
-    background-color: #e01111;
+    background-color: whitesmoke;
     padding: 60px 0;
 }
 
@@ -111,19 +127,25 @@ body {
     .partners {
         display: none;
     }
+    .plan-grid{
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+    }
 }
 /* end of partners */
 
 .plan-grid {
     display: flex;
-    gap: 20px;
-    overflow: auto;
-    margin-bottom: 10px;
+    justify-content: center;
+        gap: 10px;
+        overflow: auto;
+        margin-bottom: 10px;
 }
 
 .plan {
     flex: 0 0 auto;
-    
         border: 1px solid #ccc;
         padding: 20px;
         border-radius: 10px;
@@ -208,12 +230,20 @@ body {
     .famous-clients .client {
         margin-right: 10px;
     }
+    .client{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }
 .main {
     padding: 40px 0;
 }
 
 .section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 36px;
     margin-bottom: 20px;
 }
@@ -316,20 +346,20 @@ body {
 
 @media (max-width: 768px) {
     .plan {
-        display: block;
         width: 100%;;
     }
 }
 
 /* login */
 .login {
+    display: flex ;
+    align-items: center;
     background-color: #fff;
-    /* Choose an appropriate background color */
-    padding: 60px 0;
+    /* padding: 60px 0; */
 }
 
 .login-form {
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
 }
 
@@ -355,3 +385,176 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+
+
+/* register */
+
+/* transition item */
+.transition-item {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+
+/* media query */
+/* Add the following media query to handle small screens */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 24px;
+        /* Decrease the font size for the logo */
+    }
+
+    .menu {
+        justify-content: center;
+        /* Center the menu items */
+        flex-wrap: wrap;
+    }
+
+    .menu-item {
+        margin: 10px 0;
+
+    }
+
+    .landing .overlay {
+        width: 100%;
+        /* Make the overlay full width */
+        text-align: center;
+        padding: 20px;
+       
+    }
+
+    .section-title-landing {
+        font-size: 60px;
+
+    }
+
+    .partners .section-title {
+        font-size: 36px;
+
+    }
+
+    .partner-logos img {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .plan {
+        min-width: unset;
+    }
+
+    .plan h3 {
+        font-size: 20px;
+    }
+
+    .plan p {
+        font-size: 16px;
+    }
+
+    .plan span {
+        font-size: 16px;
+    }
+
+    .famous-clients .client-logos {
+        justify-content: center;
+    }
+
+    .famous-clients .client {
+        margin-right: 10px;
+    }
+
+    .client-img {
+        width: 100%;
+        
+    }
+
+    .overlay-clients {
+        text-align: center;
+    }
+
+    .client-title,
+    .client-description {
+        font-size: 16px;
+    }
+
+    .login-form .form-input {
+        width: calc(100% - 30px);
+    }
+}
+
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .landing {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        background-position: center;
+    }
+
+    .overlay {
+        width: 100%;
+    }
+
+    .section-title-landing {
+        font-size: 50px;
+    }
+
+    .plan {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .partner-logos {
+        justify-content: center;
+    }
+
+    .partner-logos .partner {
+        margin: 10px;
+        text-align: center;
+    }
+
+    .partner-logos img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .famous-clients .client-logos .client {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* hamburger */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+    }
+
+    .menu-item {
+        margin: 10px 0;
+    }
+}
+
+/* hamburger */
